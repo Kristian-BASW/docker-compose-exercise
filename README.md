@@ -1,4 +1,4 @@
-# docker-compose-exercise# Docker Compose exercise: Run React and an API together
+# Docker Compose exercise: Run React and an API together
 
 [Dansk](README.da.md) | **English**
 
