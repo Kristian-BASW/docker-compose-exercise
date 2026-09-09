@@ -1,0 +1,16 @@
+name: minions-compose
+
+services:
+  web:
+    build: ./react
+    environment:
+      PORT: "3000"
+    ports: 
+      - "127.0.0.1:3500:3000"
+
+  api:
+    build: ./api
+    environment:
+      ASPNET_CORE_HTTPS: "4000"
+    ports: 
+     -  "127.0.0.1:3501:4000"
