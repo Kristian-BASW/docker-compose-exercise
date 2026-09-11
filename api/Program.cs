@@ -1,12 +1,20 @@
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+        policy.AllowAnyOrigin()
+              .AllowAnyHeader()
+              .AllowAnyMethod());
+});
 
 var app = builder.Build();
 
 // Swagger is available in Docker as well as locally for this exercise.
 app.UseSwagger();
 app.UseSwaggerUI();
+app.UseCors();
 
 var minions = new[]
 {
